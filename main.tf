@@ -3,6 +3,7 @@ resource "aws_instance" "docker" {
   instance_type = "t3.micro"
   vpc_security_group_ids = [var.sg_id]
   user_data = file("docker.sh")
+
   root_block_device {
     volume_size = 50
     volume_type = "gp3"
@@ -13,6 +14,3 @@ resource "aws_instance" "docker" {
 
   }
 }
-
-
-
